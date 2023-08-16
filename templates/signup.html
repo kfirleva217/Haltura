@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Sign Up</h1>
+    <form action="/register" method="POST">
+        <div class="mb-3">
+            <label for="user-type" class="form-label">User Type</label>
+            <select class="form-select" id="user-type" name="user-type" onchange="showFields()">
+                <option value="client">Client</option>
+                <option value="handyman">Handyman</option>
+            </select>
+        </div>
+
+        <div id="client-fields">
+            <!-- Fields for Client -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="state" class="form-label">State</label>
+                <input type="text" class="form-control" id="state" name="state" required>
+            </div>
+        </div>
+
+        <div id="handyman-fields" style="display: none;">
+            <!-- Fields for Handyman -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="occupation" class="form-label">Occupation</label>
+                <input type="text" class="form-control" id="occupation" name="occupation">
+            </div>
+            <div class="mb-3">
+                <label for="experience" class="form-label">Years of Experience</label>
+                <input type="number" class="form-control" id="experience" name="experience">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+</div>
+
+<script>
+    function showFields() {
+        var userType = document.getElementById("user-type").value;
+        if (userType === "handyman") {
+            document.getElementById("handyman-fields").style.display = "block";
+            document.getElementById("client-fields").style.display = "none";
+        } else {
+            document.getElementById("handyman-fields").style.display = "none";
+            document.getElementById("client-fields").style.display = "block";
+        }
+    }
+</script>
+{% endblock %}
