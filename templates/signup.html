@@ -55,6 +55,20 @@
                 <input type="number" class="form-control" id="experience" name="experience">
             </div>
         </div>
+        <!-- ... existing form code ... -->
+
+<div class="mb-3">
+    <label for="full-name" class="form-label">Full Name</label>
+    <input type="text" class="form-control" id="full-name" name="full-name" required>
+</div>
+
+<div class="mb-3">
+    <label for="about-yourself" class="form-label">About Yourself</label>
+    <textarea class="form-control" id="about-yourself" name="about-yourself" rows="4"></textarea>
+</div>
+
+<!-- ... rest of the form ... -->
+
 
         <button type="submit" class="btn btn-primary">Sign Up</button>
     </form>
@@ -72,4 +86,5 @@
         }
     }
 </script>
+
 {% endblock %}
