@@ -40,7 +40,7 @@ def signup():
         conn.commit()
         cursor.close()
 
-        return redirect(url_for('login'))  # Redirect to login page after successful signup
+        return redirect(url_for('login'))
 
     return render_template('signup.html')
 
