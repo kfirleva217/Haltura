@@ -14,13 +14,7 @@ def login():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    f=open('/Users/kfir/log.txt','a')
-    f.write("Welcome")
-    f.close()
     if request.method == 'POST':
-        f = open('/Users/kfir/log.txt', 'a')
-        f.write("post")
-        f.close()
         user_type = request.form['user-type']
         email = request.form['email']
         username = request.form['username']
@@ -43,11 +37,14 @@ def signup():
                 "INSERT INTO users (email, username, password, user_type, occupation, experience, full_name, about_yourself) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
                 (email, username, password, user_type, occupation, experience, full_name, about_yourself)
             )
-            return "User registered successfully!"
+            conn.commit()
+            cursor.close()
+            conn.close()
+            return "User registered successfully!"  # Move this line outside the 'else' block
+
         conn.commit()
         cursor.close()
         conn.close()
         return redirect(url_for('success'))
 
     return render_template('signup.html')
-
