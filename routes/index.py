@@ -1,5 +1,7 @@
-from app import app, mysql
 from flask import render_template, request, redirect, url_for
+from app import app, db
+from routes.models import Handyman
+from .forms import RegistrationForm
 
 
 @app.route('/')
@@ -14,37 +16,17 @@ def login():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    if request.method == 'POST':
-        user_type = request.form['user-type']
-        email = request.form['email']
-        username = request.form['username']
-        password = request.form['password']
-        state = request.form['state']
-        full_name = request.form['full-name']
-        about_yourself = request.form['about-yourself']
-        occupation = request.form.get('occupation', None)
-        experience = request.form.get('experience', None)
-        conn = mysql.connection
-        cursor = conn.cursor()
+    form = RegistrationForm()  # Create an instance of the form
 
-        if user_type == 'client':
-            cursor.execute(
-                "INSERT INTO users (email, username, password, user_type, state, full_name, about_yourself) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-                (email, username, password, user_type, state, full_name, about_yourself)
-            )
-        else:
-            cursor.execute(
-                "INSERT INTO users (email, username, password, user_type, occupation, experience, full_name, about_yourself) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
-                (email, username, password, user_type, occupation, experience, full_name, about_yourself)
-            )
-            conn.commit()
-            cursor.close()
-            conn.close()
-            return "User registered successfully!"  # Move this line outside the 'else' block
+    if form.validate_on_submit():
+        new_user = Handyman(email=form.email.data, username=form.username.data, password=form.password.data,
+                            user_type=form.user_type.data, state=form.state.data, full_name=form.full_name.data,
+                            about_yourself=form.about_yourself.data, occupation=form.occupation.data,
+                            experience=form.experience.data)
 
-        conn.commit()
-        cursor.close()
-        conn.close()
-        return redirect(url_for('success'))
+        db.session.add(new_user)
+        db.session.commit()
 
-    return render_template('signup.html')
+        return "User registered successfully!"
+
+    return render_template('signup.html', form=form)
