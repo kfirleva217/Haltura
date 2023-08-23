@@ -17,7 +17,6 @@ def login():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = RegistrationForm()
-
     if form.validate_on_submit():
         new_user = Handyman(
             email=form.email.data,
@@ -36,4 +35,4 @@ def signup():
 
         return "User registered successfully!"
 
-    return render_template('login.html', form=form)
+    return render_template('signup.html', form=form)
