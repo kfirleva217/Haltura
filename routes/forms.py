@@ -16,3 +16,4 @@ class RegistrationForm(FlaskForm):
     occupation = StringField('Occupation')
     experience = StringField('Experience')
     submit = SubmitField('Register')
+

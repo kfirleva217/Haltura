@@ -3,10 +3,10 @@
 {% block content %}
 <div class="container">
     <h1>Sign Up</h1>
-    <form action="/signup" method="POST">
+    <form action="{{ url_for('signup') }}" method="POST">
         <div class="mb-3">
             <label for="user-type" class="form-label">User Type</label>
-            <select class="form-select" id="user-type" name="user-type" onchange="showFields()">
+            <select class="form-select" id="user-type" name="user_type" onchange="showFields()" required>
                 <option value="client">Client</option>
                 <option value="handyman">Handyman</option>
             </select>
@@ -35,16 +35,16 @@
         <div id="handyman-fields" style="display: none;">
             <!-- Fields for Handyman -->
             <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <label for="handyman-email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="handyman-email" name="email" required>
             </div>
             <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" name="username" required>
+                <label for="handyman-username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="handyman-username" name="username" required>
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+                <label for="handyman-password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="handyman-password" name="password" required>
             </div>
             <div class="mb-3">
                 <label for="occupation" class="form-label">Occupation</label>
@@ -63,7 +63,6 @@
                 <textarea class="form-control" id="about-yourself" name="about-yourself" rows="4"></textarea>
             </div>
         </div>
-        <!-- ... existing form code ... -->
 
         <button type="submit" class="btn btn-primary">Sign Up</button>
     </form>
