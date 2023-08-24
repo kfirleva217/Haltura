@@ -36,6 +36,7 @@ def signup():
         conn.commit()
         cursor.close()
         conn.close()
+
         return "User registered successfully!"  # Move this line outside the 'else' block
 
         conn.commit()
