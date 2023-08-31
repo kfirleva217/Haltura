@@ -1,7 +1,5 @@
+from app import app, mysql
 from flask import render_template, request, redirect, url_for
-from app import app, db
-from routes.models import Handyman
-from .forms import RegistrationForm
 
 
 @app.route('/')
@@ -16,23 +14,34 @@ def login():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        new_user = Handyman(
-            email=form.email.data,
-            username=form.username.data,
-            password=form.password.data,
-            user_type=form.user_type.data,
-            state=form.state.data,
-            full_name=form.full_name.data,
-            about_yourself=form.about_yourself.data,
-            occupation=form.occupation.data,
-            experience=form.experience.data
-        )
+    if request.method == 'POST':
+        user_type = request.form['user-type']
+        email = request.form['email']
+        username = request.form['username']
+        password = request.form['password']
+        state = request.form['state']
+        full_name = request.form['full-name']
+        about_yourself = request.form['about-yourself']
+        occupation = request.form.get('occupation', None)
+        experience = request.form.get('experience', None)
+        conn = mysql.connection
+        cursor = conn.cursor()
 
-        db.session.add(new_user)
-        db.session.commit()
+        if user_type == 'client':
+            sql = f"INSERT INTO users(email,username) VALUES('{email}','{ username}')"
+        else:
+            sql = f"INSERT INTO users(email,username) VALUES('{email}','{username}')"
 
-        return "User registered successfully!"
+        cursor.execute(sql)
+        conn.commit()
+        cursor.close()
+        conn.close()
 
-    return render_template('signup.html', form=form)
+        return "User registered successfully!"  # Move this line outside the 'else' block
+
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return redirect('/home')
+
+    return render_template('signup.html')
