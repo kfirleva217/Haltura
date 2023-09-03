@@ -3,8 +3,8 @@
 {% block content %}
 <div class="container">
     <h1>Sign Up</h1>
-    <form action="/signup" method="POST">
-        <div class="mb-3">
+        <form action="/signup" method="POST">
+        <div class="m-3">
             <label for="user-type" class="form-label">User Type</label>
             <select class="form-select" id="user-type" name="user-type" onchange="showFields()">
                 <option value="client">Client</option>
@@ -12,8 +12,9 @@
             </select>
         </div>
 
-        <div id="client-fields">
-            <!-- Fields for Client -->
+        <div id="formFileds">
+
+                 <div id="client-fields">
             <div class="mb-3">
                 <label for="client-email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="client-email" name="email" required>
@@ -27,57 +28,88 @@
                 <input type="password" class="form-control" id="client-password" name="password" required>
             </div>
             <div class="mb-3">
-                <label for="state" class="form-label">State</label>
-                <input type="text" class="form-control" id="state" name="state" required>
+                <label for="client-state" class="form-label">State</label>
+                <input type="text" class="form-control" id="client-state" name="state" required>
             </div>
         </div>
-
-        <div id="handyman-fields" st yle="display: none;">
-            <!-- Fields for Handyman -->
-<!--            <div class="mb-3">-->
-<!--                <label for="email" class="form-label">Email</label>-->
-<!--                <input type="email" class="form-control" id="email" name="em ail" required>-->
-<!--            </div>-->
-<!--            <div class="mb-3">-->
-<!--                <label for="username" class="form-label">Username</label>-->
-<!--                <input type="text" class="form-control" id="username" name="username" required>-->
-<!--            </div>-->
-<!--            <div class="mb-3">-->
-<!--                <label for="password" class="form-label">Password</label>-->
-<!--                <input type="password" class="form-control" id="password" name="password" required>-->
-<!--            </div>-->
-            <div class="mb-3">
-                <label for="occupation" class="form-label">Occupation</label>
-                <input type="text" class="form-control" id="occupation" name="occupation">
-            </div>
-            <div class="mb-3">
-                <label for="experience" class="form-label">Years of Experience</label>
-                <input type="number" class="form-control" id="experience" name="experience">
-            </div>
-            <div class="mb-3">
-                <label for="full-name" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="full-name" name="full-name" required>
-            </div>
-            <div class="mb-3">
-                <label for="about-yourself" class="form-label">About Yourself</label>
-                <textarea class="form-control" id="about-yourself" name="about-yourself" rows="4"></textarea>
-            </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
         </div>
-        <!-- ... existing form code ... -->
+<!--            old version-->
+        <!-- Client Fields -->
 
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+
+         Handyman Fields
+
     </form>
 </div>
 
 <script>
+    function sub(){
+    console.log("submiting")
+    }
     function showFields() {
         var userType = document.getElementById("user-type").value;
         if (userType === "handyman") {
-            document.getElementById("handyman-fields").style.display = "block";
-            document.getElementById("client-fields").style.display = "none";
+        document.querySelector("#formFileds").innerHTML =`
+ <div id="handyman-fields">
+            <div class="mb-3">
+                <label for="handyman-email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="handyman-email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="handyman-username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="handyman-username" name="username" required>
+            </div>
+              <div class="mb-3">
+                <label for="handyman-state" class="form-label">state</label>
+                <input type="text" class="form-control" id="handyman-state" name="state" required>
+            </div>
+            <div class="mb-3">
+                <label for="handyman-password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="handyman-password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="handyman-occupation" class="form-label">Occupation</label>
+                <input type="text" class="form-control" id="handyman-occupation" name="occupation">
+            </div>
+            <div class="mb-3">
+                <label for="handyman-experience" class="form-label">Years of Experience</label>
+                <input type="number" class="form-control" id="handyman-experience" name="experience">
+            </div>
+            <div class="mb-3">
+                <label for="handyman-full-name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="handyman-full-name" name="full-name" required>
+            </div>
+            <div class="mb-3">
+                <label for="handyman-about-yourself" class="form-label">About Yourself</label>
+                <textarea class="form-control" id="handyman-about-yourself" name="about-yourself" rows="4"></textarea>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+        `;
         } else {
-            document.getElementById("handyman-fields").style.display = "none";
-            document.getElementById("client-fields").style.display = "block";
+                document.querySelector("#formFileds").innerHTML =`
+                 <div id="client-fields">
+            <div class="mb-3">
+                <label for="client-email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="client-email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="client-username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="client-username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="client-password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="client-password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="client-state" class="form-label">State</label>
+                <input type="text" class="form-control" id="client-state" name="state" required>
+            </div>
+        </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+                `
         }
     }
 </script>
