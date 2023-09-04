@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <h1>Sign Up</h1>
+<div class="container" dir="rtl">
+    <h1>הרשמה</h1>
         <form action="/signup" method="POST">
         <div class="m-3">
-            <label for="user-type" class="form-label">User Type</label>
+            <label for="user-type" class="form-label">מי אתה?</label>
             <select class="form-select" id="user-type" name="user-type" onchange="showFields()">
-                <option value="client">Client</option>
-                <option value="handyman">Handyman</option>
+                <option value="client">משתמש</option>
+                <option value="handyman">בעל מקצוע</option>
             </select>
         </div>
 
@@ -16,29 +16,24 @@
 
                  <div id="client-fields">
             <div class="mb-3">
-                <label for="client-email" class="form-label">Email</label>
+                <label for="client-email" class="form-label">מייל</label>
                 <input type="email" class="form-control" id="client-email" name="email" required>
             </div>
             <div class="mb-3">
-                <label for="client-username" class="form-label">Username</label>
+                <label for="client-username" class="form-label">שם משתמש</label>
                 <input type="text" class="form-control" id="client-username" name="username" required>
             </div>
             <div class="mb-3">
-                <label for="client-password" class="form-label">Password</label>
+                <label for="client-password" class="form-label">סיסמה</label>
                 <input type="password" class="form-control" id="client-password" name="password" required>
             </div>
             <div class="mb-3">
-                <label for="client-state" class="form-label">State</label>
+                <label for="client-state" class="form-label">יישוב</label>
                 <input type="text" class="form-control" id="client-state" name="state" required>
             </div>
         </div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="submit" class="btn btn-primary">הירשם</button>
         </div>
-<!--            old version-->
-        <!-- Client Fields -->
-
-
-         Handyman Fields
 
     </form>
 </div>
@@ -53,62 +48,62 @@
         document.querySelector("#formFileds").innerHTML =`
  <div id="handyman-fields">
             <div class="mb-3">
-                <label for="handyman-email" class="form-label">Email</label>
+                <label for="handyman-email" class="form-label">מייל</label>
                 <input type="email" class="form-control" id="handyman-email" name="email" required>
             </div>
             <div class="mb-3">
-                <label for="handyman-username" class="form-label">Username</label>
+                <label for="handyman-username" class="form-label">שם משתמש</label>
                 <input type="text" class="form-control" id="handyman-username" name="username" required>
             </div>
               <div class="mb-3">
-                <label for="handyman-state" class="form-label">state</label>
+                <label for="handyman-state" class="form-label">יישוב</label>
                 <input type="text" class="form-control" id="handyman-state" name="state" required>
             </div>
             <div class="mb-3">
-                <label for="handyman-password" class="form-label">Password</label>
+                <label for="handyman-password" class="form-label">סיסמה</label>
                 <input type="password" class="form-control" id="handyman-password" name="password" required>
             </div>
             <div class="mb-3">
-                <label for="handyman-occupation" class="form-label">Occupation</label>
+                <label for="handyman-occupation" class="form-label">מקצוע</label>
                 <input type="text" class="form-control" id="handyman-occupation" name="occupation">
             </div>
             <div class="mb-3">
-                <label for="handyman-experience" class="form-label">Years of Experience</label>
+                <label for="handyman-experience" class="form-label">שנות נסיון</label>
                 <input type="number" class="form-control" id="handyman-experience" name="experience">
             </div>
             <div class="mb-3">
-                <label for="handyman-full-name" class="form-label">Full Name</label>
+                <label for="handyman-full-name" class="form-label">שם מלא</label>
                 <input type="text" class="form-control" id="handyman-full-name" name="full-name" required>
             </div>
             <div class="mb-3">
-                <label for="handyman-about-yourself" class="form-label">About Yourself</label>
+                <label for="handyman-about-yourself" class="form-label">ספר על עצמך</label>
                 <textarea class="form-control" id="handyman-about-yourself" name="about-yourself" rows="4"></textarea>
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="submit" class="btn btn-primary">הירשם</button>
         `;
         } else {
                 document.querySelector("#formFileds").innerHTML =`
                  <div id="client-fields">
             <div class="mb-3">
-                <label for="client-email" class="form-label">Email</label>
+                <label for="client-email" class="form-label">מייל</label>
                 <input type="email" class="form-control" id="client-email" name="email" required>
             </div>
             <div class="mb-3">
-                <label for="client-username" class="form-label">Username</label>
+                <label for="client-username" class="form-label">שם משתמש</label>
                 <input type="text" class="form-control" id="client-username" name="username" required>
             </div>
             <div class="mb-3">
-                <label for="client-password" class="form-label">Password</label>
+                <label for="client-password" class="form-label">סיסמה</label>
                 <input type="password" class="form-control" id="client-password" name="password" required>
             </div>
             <div class="mb-3">
-                <label for="client-state" class="form-label">State</label>
+                <label for="client-state" class="form-label">יישוב</label>
                 <input type="text" class="form-control" id="client-state" name="state" required>
             </div>
         </div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="submit" class="btn btn-primary">הירשם</button>
                 `
         }
     }
