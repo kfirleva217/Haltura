@@ -2,25 +2,25 @@
 
 {% block content %}
 
-<div class="container">
-    <h1>Login</h1>
+<div class="container" dir="rtl">
+    <h1>התחברות</h1>
     <form action="/authenticate" method="POST">
         <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
+            <label for="username" class="form-label">שם משתמש</label>
             <input type="text" class="form-control" id="username" name="username" required>
         </div>
         <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
+            <label for="password" class="form-label">סיסמה</label>
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
         <div class="mb-3">
-            <label for="user-type" class="form-label">User Type</label>
+            <label for="user-type" class="form-label">מי אתה?</label>
             <select class="form-select" id="user-type" name="user-type">
-                <option value="client">Client</option>
-                <option value="handyman">Handyman</option>
+                <option value="client">משתמש</option>
+                <option value="handyman">בעל מקצוע</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Log In</button>
+        <button type="submit" class="btn btn-primary">התחברות</button>
     </form>
 </div>
 
