@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>User Profile</h1>
+    <div class="user-info">
+        <h2>{{ user.full_name }}</h2>
+        <p>Email: {{ user.email }}</p>
+        <p>Username: {{ user.username }}</p>
+        <p>State: {{ user.state }}</p>
+        {% if user.user_type == 'handyman' %}
+        <p>Occupation: {{ user.occupation }}</p>
+        <p>Experience: {{ user.experience }}</p>
+        {% endif %}
+        <p>About: {{ user.about_yourself }}</p>
+    </div>
+</div>
+{% endblock %}
