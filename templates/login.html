@@ -1,27 +1,78 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
-<div class="container">
-    <h1>Login</h1>
-    <form action="/authenticate" method="POST">
-        <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" name="username" required>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="/static/LoginCSS/globals.css"/>
+    <link rel="stylesheet" href="/static/LoginCSS/styleguide.css"/>
+    <link rel="stylesheet" href="/static/LoginCSS/style.css"/>
+</head>
+<body>
+<div class="slide">
+    <div class="div">
+        <p class="log-in-to"><span class="text-wrapper">log in to</span> <span class="span">&nbsp;</span></p>
+        <p class="welcome-back-please">Welcome back, please log in<br/>to your account</p>
+        <div class="group">
+            <div class="overlap">
+                <div class="email-input-field">
+                    <div class="overlap-group">
+                        <label for="email" class="text-wrapper-2"></label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <img class="mail" src="https://c.animaapp.com/sE9djd4z/img/mail.svg"/>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password" required>
+        <div class="overlap-wrapper">
+            <div class="overlap">
+                <div class="email-input-field">
+                    <div class="overlap-group">
+                        <label for="password" class="text-wrapper-3"></label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                </div>
+                <img class="key" src="https://c.animaapp.com/sE9djd4z/img/key-1.svg"/>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="user-type" class="form-label">User Type</label>
-            <select class="form-select" id="user-type" name="user-type">
-                <option value="client">Client</option>
-                <option value="handyman">Handyman</option>
-            </select>
+        <div class="NAVBAR">
+            <div class="overlap-2">
+                <div class="text-wrapper-4"><a href="/">Home</a></div>
+                <p class="log-in"><span class="text-wrapper-5"><a href="/login">log in</a></span>
+                <div class="text-wrapper-8">Haltura</div>
+                <div class="overlap-group-wrapper">
+                    <div class="overlap-group-2">
+                        <img class="vector" src="https://c.animaapp.com/sE9djd4z/img/vector-4.svg"/>
+                        <img class="img" src="https://c.animaapp.com/sE9djd4z/img/vector-3.svg"/>
+                        <div class="ellipse"></div>
+                        <div class="ellipse-2"></div>
+                    </div>
+                </div>
+                <div class="overlap-3">
+                    <div class="rectangle"></div>
+                    <div class="text-wrapper-9"><a href="/signup">Register Now</a></div>
+                </div>
+                <div class="overlap-4">
+                    <img class="rectangle-2" src="https://c.animaapp.com/sE9djd4z/img/rectangle-158.svg"/>
+                    <div class="text-wrapper-9"><a href="/login">Log in</a></div>
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Log In</button>
-    </form>
+        <img class="logged-out" src="https://c.animaapp.com/sE9djd4z/img/logged-out.png"/>
+        <div class="group-wrapper">
+            <div class="div-wrapper">
+                <div class="overlap-group-3">
+                    <div class="text-wrapper-10"><a href="/signup">sign up</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="group-2">
+            <div class="div-wrapper">
+                <div class="overlap-group-4">
+                    <div class="text-wrapper-11"><a href="/">log in</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-wrapper-12">Haltura</div>
+    </div>
 </div>
+</body>
+</html>
 
-{% endblock %}
