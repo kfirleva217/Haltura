@@ -7,6 +7,7 @@ app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'Fa3a47403c'
 app.config['MYSQL_DB'] = 'Haltura'
+app.config["SECRET_KEY"] = 'kniobniobi24io1b4iobo'
 mysql = MySQL(app)
 
 from  routes import index
