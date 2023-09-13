@@ -1,0 +1,393 @@
+.box {
+    width: 1160px;
+    height: 64px;
+}
+
+.box .NAVBAR {
+    position: fixed;
+    width: 100%;
+    height: 64px;
+    top: 0;
+    left: 0;
+}
+
+.box .overlap {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    height: 64px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px #0000001a;
+}
+
+.box .text-wrapper {
+    cursor: pointer;
+    position: absolute;
+    width: 78px;
+    top: 23px;
+    left: 10%;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 11.1px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 16.7px;
+    white-space: nowrap;
+}
+
+.box .log-in {
+    cursor: pointer;
+    position: absolute;
+    width: 78px;
+    top: 23px;
+    left: 15%;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 11.1px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 16.7px;
+    white-space: nowrap;
+}
+
+.box .span {
+    font-weight: 500;
+}
+
+
+.box .div {
+    cursor: pointer;
+    position: absolute;
+    width: 100px;
+    top: 30%;
+    left: 2.5%;
+    font-family: Croogla4F;
+    font-weight: 300;
+    color: #000000;
+    font-size: 26px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.box .overlap-group {
+    position: absolute;
+    width: 28px;
+    height: 23px;
+    top: 30%;
+    left: 0.5%;
+}
+
+.box .vector {
+    position: absolute;
+    width: 11px;
+    height: 10px;
+    top: 12px;
+    left: 16px;
+}
+
+.box .img {
+    position: absolute;
+    width: 19px;
+    height: 13px;
+    top: 10px;
+    left: 0;
+}
+
+.box .ellipse {
+    width: 10px;
+    height: 11px;
+    top: 0;
+    left: 4px;
+    border-radius: 5.25px/5.34px;
+    position: absolute;
+    border: 2px solid;
+    border-color: #4caf4f;
+}
+
+.box .ellipse-2 {
+    width: 9px;
+    height: 9px;
+    top: 3px;
+    left: 16px;
+    border-radius: 4.52px/4.6px;
+    position: absolute;
+    border: 2px solid;
+    border-color: #4caf4f;
+}
+
+.box .overlap-2 {
+    position: absolute;
+    width: 162px;
+    height: 36px;
+    top: 14px;
+    left: 972px;
+}
+
+.box .rectangle {
+    position: absolute;
+    width: 151px;
+    height: 36px;
+    top: 0;
+    left: 5px;
+    background-color: #4caf4f;
+    border-radius: 6px;
+}
+
+.box .text-wrapper-3 {
+    cursor: pointer;
+    position: absolute;
+    width: 162px;
+    top: 9px;
+    left: 0;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 11.1px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 16.7px;
+    white-space: nowrap;
+}
+
+.box .overlap-3 {
+    position: absolute;
+    width: 162px;
+    height: 36px;
+    top: 14px;
+    left: 799px;
+}
+
+.box .rectangle-2 {
+    position: absolute;
+    width: 151px;
+    height: 36px;
+    top: 0;
+    left: 6px;
+}
+
+.slide {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.slide .div {
+    background-color: #ffffff;
+    width: 1160px;
+    height: 768px;
+    position: relative;
+}
+
+.slide .log-in-to {
+    position: absolute;
+    width: 158px;
+    top: 195px;
+    left: 83px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 42px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+
+.slide .span {
+    font-family: Croogla4F;
+}
+
+.slide .welcome-back-please {
+    position: absolute;
+    width: 347px;
+    top: 263px;
+    left: 84px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 500;
+    color: #5c5c5c;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 30px;
+}
+
+.slide .group {
+    position: absolute;
+    width: 258px;
+    height: 40px;
+    top: 369px;
+    left: 86px;
+}
+
+.slide .overlap {
+    position: relative;
+    width: 260px;
+    height: 40px;
+}
+
+.slide .email-input-field {
+    position: absolute;
+    width: 260px;
+    height: 40px;
+    top: 0;
+    left: 0;
+}
+
+.slide .overlap-group {
+    position: relative;
+    width: 258px;
+    height: 40px;
+    background-color: #978d8d33;
+    border-radius: 5.57px;
+}
+
+
+.slide .mail {
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    top: 10px;
+    left: 218px;
+}
+
+.slide .overlap-wrapper {
+    position: absolute;
+    width: 258px;
+    height: 40px;
+    top: 422px;
+    left: 86px;
+}
+
+
+.slide .key {
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    top: 8px;
+    left: 218px;
+}
+
+.slide .logged-out {
+    position: absolute;
+    width: 587px;
+    height: 701px;
+    top: 67px;
+    left: 516px;
+}
+
+.slide .group-wrapper {
+    position: absolute;
+    width: 86px;
+    height: 23px;
+    top: 494px;
+    left: 187px;
+}
+
+.slide .overlap-group-wrapper {
+    width: 88px;
+    height: 23px;
+}
+
+.slide .div-wrapper {
+    position: relative;
+    width: 130px;
+    height: 23px;
+    background-color: #b0b7b1;
+    border-radius: 6px;
+    margin-top: 25px;
+    margin-left: 27px;
+
+}
+
+.slide .text-wrapper-4 {
+    position: absolute;
+    width: 39px;
+    top: 2px;
+    left: 24px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 16.7px;
+    white-space: nowrap;
+    margin-left: 20px;
+
+}
+
+.slide .group-2 {
+    position: absolute;
+    width: 86px;
+    height: 23px;
+    top: 494px;
+    left: 86px;
+}
+
+.slide .overlap-group-2 {
+    position: relative;
+    width: 86px;
+    height: 23px;
+    background-color: #4caf4f;
+    border-radius: 6px;
+    left: 5%;
+}
+
+.slide .text-wrapper-5 {
+    position: absolute;
+    width: 27px;
+    top: 3px;
+    left: 30px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 16.7px;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+.slide .text-wrapper-6 {
+    position: absolute;
+    width: 149px;
+    top: 205px;
+    left: 245px;
+    font-family: Croogla4F;
+    font-weight: 400;
+    color: #000000;
+    font-size: 42px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    margin-top: -5px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Adjust padding as needed */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000; /* Adjust color as needed */
+    margin: 0 10px; /* Add margin between buttons */
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar a {
+        margin: 5px 0; /* Adjust margin for smaller screens */
+    }
+}
+
