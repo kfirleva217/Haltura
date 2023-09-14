@@ -1,28 +1,111 @@
 {% extends 'base.html' %}
 
-{% block content%}
+{% block content %}
+<link rel="stylesheet" href="/static/signupCSS/globals.css"/>
+<link rel="stylesheet" href="/static/signupCSS/style.css"/>
+<body>
+<div class="macbook-pro">
+    <div class="text-wrapper">Welcome to</div>
+    <form action="/users" method="POST">
+        <!-- Email Input -->
+        <div class="group">
+            <div class="overlap">
+                <div class="email-input-field">
+                    <div class="overlap-group">
+                        <label for="email" class="text-wrapper-2"></label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <img class="icon" src="https://c.animaapp.com/CGdQuXOY/img/mail.svg"/>
+            </div>
+        </div>
 
-<table>
-<table class="table">
-<thead>
-<tr>
-<th scope="col">#id</th>
-<th scope="col">name</th>
-<th scope="col">email</th>
-<th scope="col">password</th>
-</tr>
-</thead>
-<tbody>
-{% for user in users %}
-<tr>
-<th scope="row">{{user[0]}}</th>
-<td>{{user[1]}}</td>
-<td>{{user[2]}}</td>
-<td>{{user[3]}}</td>
-</tr>
-{% endfor %}
-</tbody>
-</table>
-</table>
+        <!-- Add class names for the other input fields -->
+        <div class="group">
+            <div class="overlap">
+                <div class="email-input-field">
+                    <div class="overlap-group">
+                        <label for="username" class="text-wrapper-2"></label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                </div>
+                <img class="icon" src="https://c.animaapp.com/Y9GaYeuw/img/icon-2.svg"/>
+            </div>
+        </div>
 
+
+        <!-- Password Input -->
+        <div class="group">
+            <div class="overlap">
+                <div class="email-input-field">
+                    <div class="overlap-group">
+                        <label for="password" class="text-wrapper-2"></label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password"
+                               required>
+                    </div>
+                </div>
+                <img class="icon" src="https://c.animaapp.com/CGdQuXOY/img/key-1.svg"/>
+            </div>
+        </div>
+        <!-- State Input -->
+        <div class="group">
+            <div class="overlap">
+                <div class="email-input-field">
+                    <div class="overlap-group">
+                        <label for="state" class="text-wrapper-2"></label>
+                        <input type="text" id="state" name="state" placeholder="Enter your state" required>
+                    </div>
+                </div>
+                <img class="icon" src="https://c.animaapp.com/Y9GaYeuw/img/icon-1.svg" />
+            </div>
+        </div>
+
+        <!-- Occupation Input -->
+        <div class="group">
+            <div class="overlap">
+                <div class="email-input-field">
+                    <div class="overlap-group">
+                        <label for="occupation" class="text-wrapper-2"></label>
+                        <input type="text" id="occupation" name="occupation" placeholder="Enter your occupation"
+                               required>
+                    </div>
+                </div>
+                <img class="icon" src="https://c.animaapp.com/Y9GaYeuw/img/briefcase.svg"/>
+            </div>
+        </div>
+
+        <!-- Years of Experience Input -->
+        <div class="group">
+            <div class="overlap">
+                <div class="email-input-field">
+                    <div class="overlap-group">
+                        <label for="experience" class="text-wrapper-2"></label>
+                        <input type="number" id="experience" name="experience"
+                               placeholder="Enter years of experience" required>
+                    </div>
+                </div>
+                <img class="icon" src="https://c.animaapp.com/Y9GaYeuw/img/hourglass.svg"/></div>
+        </div>
+
+        <!-- Full Name Input -->
+        <div class="group">
+            <div class="overlap">
+                <div class="email-input-field">
+                    <div class="overlap-group">
+                        <label for="fullname" class="text-wrapper-2"></label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name"
+                               required>
+                    </div>
+                </div>
+                <img class="icon" src="https://c.animaapp.com/Y9GaYeuw/img/icon.svg"/></div>
+        </div>
+        <img class="haltura" src="https://c.animaapp.com/Y9GaYeuw/img/haltura.svg" alt=""/>
+        <img class="group-4" src="https://c.animaapp.com/Y9GaYeuw/img/group-20.png" alt=""/>
+        <div class="div-wrapper">
+            <button class="button-1">Signup</button>
+            <!--            <button class="button-2">Login</button>-->
+        </div>
+    </form>
+</div>
+</body>
 {% endblock %}

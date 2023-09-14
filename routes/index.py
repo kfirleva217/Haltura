@@ -13,11 +13,11 @@ def index():
 def login():
     if request.method == 'POST':
         user_type = request.form['user-type']
-        username = request.form['username']
+        email = request.form['email']
         password = request.form['password']
         if user_type == 'client':
             cur = mysql.connection.cursor()
-            cur.execute("SELECT * FROM clients WHERE username = %s", (username,))
+            cur.execute("SELECT * FROM clients WHERE email = %s", (email,))
             userAttempt = cur.fetchone()
             cur.close()
             if userAttempt:
@@ -31,7 +31,7 @@ def login():
             # return render_template("login.html")
         if user_type == 'handyman':
             cur = mysql.connection.cursor()
-            cur.execute("SELECT * FROM handyman WHERE username = %s", (username,))
+            cur.execute("SELECT * FROM handyman WHERE email = %s", (email,))
             userAttempt = cur.fetchone()
             cur.close()
 
